@@ -1,0 +1,2 @@
+# generatorSqlmapCustom
+自动生成mapper接口代理
