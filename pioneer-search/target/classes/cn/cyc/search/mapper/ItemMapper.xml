@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.cyc.search.mapper.ItemMapper">
+	<select id="getItemList" resultType="cn.cyc.search.pojo.Item">
+		select
+		a.id,
+		b.`name` category_name,
+		a.title ,
+		a.sell_point,
+		a.price,
+		a.image,
+		c.item_desc
+		from tb_item a
+		LEFT JOIN tb_item_cat b ON a.cid=b.id
+		LEFT JOIN tb_item_desc c on a.id=c.item_id
+	</select>
+</mapper>
